@@ -7,21 +7,29 @@ using namespace std;
 class Solution{
 public:
 	void pushZerosToEnd(int arr[], int n) {
-	    // code he
-	    vector<int>temp;
+	    // code here
+	    /* int j = -1;
 	    for(int i=0;i<n;i++){
-	        if(arr[i]!=0){
-	            temp.push_back(arr[i]);
+	        if(arr[i]==0){
+	            j=i;
+	            break;
 	        }
 	    }
-	    int nz = temp.size();
-	    for(int i=0;i<nz;i++){
-	        arr[i]=temp[i];
+	    for(int i=j+1;i<n;i++){
+	        if(arr[i]!=0){
+	            swap(arr[i],arr[j]);
+	            j++;
+	        }
 	    }
-	    for(int i=nz;i<n;i++){
-	        arr[i]=0;
+	    */
+	    int  a = 0;
+	    for(int i =0;i<n;i++){
+	        if(arr[i]!=0){
+	            swap(arr[i],arr[a]);
+	            a++;
+	        }
 	    }
-	   
+	    
 	}
 };
 
