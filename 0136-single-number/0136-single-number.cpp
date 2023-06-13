@@ -5,10 +5,10 @@ public:
         for(int i = 0;i<nums.size();i++){
             ++mp[nums[i]];
         }
-        for(auto it: mp){
-            if(it.second == 1){
-                return it.first;
-                
+        for(int i = 0;i<nums.size();i++){
+            if(mp[nums[i]]==1){
+                return nums[i];
+                break;
             }
         }
         return -1;
