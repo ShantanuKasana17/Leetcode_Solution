@@ -3,6 +3,8 @@
 using namespace std;
 
 // } Driver Code Ends
+
+// optimmised approach using 2 pointer
 class Solution{
     public:
     vector<pair<int,int>> allPairs(int A[], int B[], int N, int M, int X)
