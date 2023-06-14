@@ -1,3 +1,6 @@
+// optimised appriach 
+//0(1)
+// kadane's algorithm
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
