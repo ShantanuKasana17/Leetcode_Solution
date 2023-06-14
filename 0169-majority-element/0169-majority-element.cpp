@@ -1,15 +1,25 @@
+// moores voting algo 
+// optimized approach 
+// 0(N)
+
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        map<int,int> mp;
-        for(int i = 0;i<nums.size();i++){
-            mp[nums[i]]++;
-        }
-        for(auto it : mp){
-            if(it.second>(nums.size()/2)){
-                return it.first;
+        int maj = 0;
+        int count = 0;
+        for(auto it : nums){
+            if(count == 0){
+                maj = it;
             }
+            if(maj == it){
+                count++;
+            }
+            else{
+                count--;
+            }
+            
         }
-        return  -1;
+        return maj;
+
     }
 };
