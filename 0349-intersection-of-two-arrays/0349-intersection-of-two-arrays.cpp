@@ -1,32 +1,25 @@
-
-// using tw0 pointer approach 
+  // using unordered map 
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        int l1=nums1.size();
         
-        int l2=nums2.size();
-        int i=0;
-        
-        int j=0;
-        vector<int>ans;
-        
-        sort(nums1.begin(), nums1.end());
-        sort(nums2.begin(), nums2.end());
-        
-        while(i<l1  &&j<l2)
+        vector<int> ans;
+        unordered_map<int, int> mp;
+
+        for(auto i:nums1)
         {
-            if(nums1[i]  <nums2[j]) i++;
-            else if(nums1[i  ]==nums2[j]) 
-            {
-                ans.push_back(nums1[i]);
-                i++;
-                j++;
-            }
-            else if(nums1[i]>nums2[j]) j++;
+            mp[i]++;
         }
-        ans.erase(unique(ans.begin(), ans.end()), ans.end());
+
+        for(auto i:nums2)
+        {
+            if(mp[i])
+            {
+                mp[i]=false;
+                ans.push_back(i);
+            }
+        }
+
         return ans;
-        
     }
 };
