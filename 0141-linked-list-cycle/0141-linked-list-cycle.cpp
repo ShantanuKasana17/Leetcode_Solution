@@ -8,33 +8,21 @@
  */
 class Solution {
 public:
-  ListNode *floydcycle(ListNode *head)
-  {
-      if(head==NULL)
-      {
-          return NULL;
-      }
-
-      ListNode *slow=head;
-      ListNode *fast=head;
-      
-      while(slow!=NULL && fast!=NULL)
-      {
-          fast=fast->next;
-          
-          if(fast!=NULL)
-              
-          fast=fast->next;
-          slow=slow->next;
-          
-          if(slow==fast)
-              
-          return slow;
-      }
-      return NULL;
-
-  }
     bool hasCycle(ListNode *head) {
-     return floydcycle(head);
+        if(head == NULL || head -> next == NULL)
+        {return false;}
+        
+        ListNode * fast = head;
+        ListNode * slow = head;
+        
+        while(fast -> next && fast -> next -> next)
+        {
+            fast = fast -> next -> next;
+            slow = slow -> next;
+            
+            if(fast == slow)
+                return true;
+        }
+        return false;
     }
 };
